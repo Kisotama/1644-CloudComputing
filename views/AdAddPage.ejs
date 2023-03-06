@@ -114,6 +114,17 @@
                                             <input type="text" class="form-control" id="Price" name="Price" value="" placeholder="Price" >
                                         </TD>
                                     </tr>
+                                    <div class="form-floating mb-3">
+                                        <select name="Types" class="form-select" id="floatingSelect"
+                                            aria-label="Floating label select example">
+                                                <option value="GundamHG">GundamHG</option>
+                                                <option value="GundamSD">GundamSD</option>
+                                                <option value="GundamRG">GundamRG</option>
+                                                <option value="GundamMG">GundamMG</option>
+                                                <option value="GundamPG">GundamPG</option>
+                                        </select>
+                                    <label for="floatingSelect">Type of Gundam Figure</label>
+                                </div>
                                   
 
                                     <tr class="text-white">
@@ -145,6 +156,7 @@
                                                     <td><%= quotes[i].ID %></td>
                                                     <td><%= quotes[i].Product %></td>
                                                     <td><%= quotes[i].Price %></td>
+                                                    <td><%= quotes[i].floatingSelect %></td>
         
                                         
                                          </tr>
