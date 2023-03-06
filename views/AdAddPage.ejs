@@ -87,8 +87,8 @@
 
 
             <form class="row contact_form" action="/add" method="post" novalidate="novalidate">
-                //cất id ẩn
-                <!-- <input type="hidden" class="form-control" id="id" name="id" value="" > -->
+                
+                <!--  -->
                 <div class="container-fluid pt-4 px-4">
                     <div class="bg-secondary text-center rounded p-4">
                         <div class="table-responsive">
@@ -102,24 +102,19 @@
                                     </tr>
 
                                     <tr class="text-white">
-                                        <td scope="col">Login name:</td>
+                                        <td scope="col">Product :</td>
                                         <td>
-                                            <input type="text" class="form-control" id="UserName" name="UserName" value=""
-                                            placeholder="UserName" >
+                                            <input type="text" class="form-control" id="Product" name="Product" value=""
+                                            placeholder="Product" >
                                         </TD>
                                     </tr>
                                     <tr class="text-white">
-                                        <td scope="col">Email:</td>
+                                        <td scope="col">Price:</td>
                                         <td>
-                                            <input type="text" class="form-control" id="Email" name="Email" value="" placeholder="Email" >
+                                            <input type="text" class="form-control" id="Price" name="Price" value="" placeholder="Price" >
                                         </TD>
                                     </tr>
-                                    <tr class="text-white">
-                                        <td scope="col">Phone :</td>
-                                        <td>
-                                            <input type="text" class="form-control" id="Phone" name="Phone" value="" placeholder="Phone" >
-                                        </TD>
-                                    </tr>
+                                  
 
                                     <tr class="text-white">
                                         <td scope="col"></td>
@@ -136,11 +131,10 @@
                                     <thead>
                                         <tr class="text-white">
         
-                                            <th scope="col">id</th>
-                                            <th scope="col">UserName</th>
-                                            <th scope="col">Email</th>
-                                            <th scope="col">Phone</th>
-                                            <th scope="col">Action</th>
+                                            <th scope="col">ID</th>
+                                            <th scope="col">Product</th>
+                                            <th scope="col">Price</th>
+                                            
                                         </tr>
                                     </thead>
                                     <tbody class="""quotes">
@@ -149,18 +143,10 @@
                                          <tr class="quotes">
         
                                                     <td><%= quotes[i].ID %></td>
-                                                    <td><%= quotes[i].UserName %></td>
-                                                    <td><%= quotes[i].Email %></td>
-                                                    <td><%= quotes[i].Phone %></td>
+                                                    <td><%= quotes[i].Product %></td>
+                                                    <td><%= quotes[i].Price %></td>
         
-                                                    <td>
-                                                
-                                                            <a href="" class="btn btn-primary">
-                                                                Edit </a> |
-                                                             <a href="" class="btn btn-danger"> Delete
-                                                            </a> 
-                                                        
-                                                    </td>
+                                        
                                          </tr>
                                             
                                         <% } %>    

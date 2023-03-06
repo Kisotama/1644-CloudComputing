@@ -17,7 +17,7 @@ MongoClient.connect(connectionString, { useUnifiedTopology: true })
         
         // (1a) CREATE: client -> create -> database -> 'star-wars-quotes'
         // -> create -> collection -> 'quotes'
-        const db = client.db('star-wars-quotes')
+        const db = client.db('GeezData')
         const quotesCollection = db.collection('quotes')
        
         
