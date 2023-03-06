@@ -4,6 +4,7 @@
 const express = require('express');
 const bodyParser= require('body-parser')
 const app = express();
+const path = require('path');
 
 const MongoClient = require('mongodb').MongoClient
 
@@ -18,6 +19,7 @@ MongoClient.connect(connectionString, { useUnifiedTopology: true })
         // -> create -> collection -> 'quotes'
         const db = client.db('star-wars-quotes')
         const quotesCollection = db.collection('quotes')
+       
         
         // To tell Express to EJS as the template engine
         app.set('view engine', 'ejs') 
@@ -27,10 +29,16 @@ MongoClient.connect(connectionString, { useUnifiedTopology: true })
 
         // To make the 'public' folder accessible to the public
         app.use(express.static('public'))
+        app.use('/css', express.static(__dirname +'/public/css'))
+        app.use('/img', express.static(__dirname +'/public/img'))
+        app.use('/js', express.static(__dirname +'/public/js'))
+        app.use('/lib', express.static(__dirname +'/public/lib'))
+        app.use('/scss', express.static(__dirname +'/public/scss'))
 
         // To teach the server to read JSON data 
         app.use(bodyParser.json())
 
+ 
         // (2) READ: client -> browser -> url 
         // -> server -> '/' -> collection -> 'quotes' -> find() 
         // -> results -> index.ejs -> client
@@ -43,14 +51,13 @@ MongoClient.connect(connectionString, { useUnifiedTopology: true })
                     
                     // results -> index.ejs -> client -> browser 
                     // The file 'index.ejs' must be placed inside a 'views' folder BY DEFAULT
-                    res.render('index.ejs', { quotes: results })
+                    res.render('AdAddPage.ejs', { quotes: results })
                 })
                 .catch(/* ... */)
         })
-
         // (1b) CREATE: client -> index.ejs -> data -> SUBMIT 
         // -> post -> '/quotes' -> collection -> insert -> result
-        app.post('/quotes', (req, res) => {
+        app.post('/add', (req, res) => {
             quotesCollection.insertOne(req.body)
             .then(result => {
                 
