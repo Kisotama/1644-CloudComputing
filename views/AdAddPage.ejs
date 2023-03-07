@@ -37,15 +37,14 @@
         <!-- Spinner End -->
 
 
-        <!-- Sidebar Start -->
-        <div class="sidebar pe-4 pb-3">
+         <div class="sidebar pe-4 pb-3">
             <nav class="navbar bg-secondary navbar-dark">
                 <a href="#" class="navbar-brand mx-4 mb-3">
-                    <h3 class="text-primary"><i class="fa fa-user-edit me-2"></i>Gundam Store</h3>
-                </a>
-                <div class="d-flex align-items-center ms-4 mb-4">
+                    <h3 class="text-primary">Gundam Store</h3>
+                </a> 
+                 <div class="d-flex align-items-center ms-4 mb-4">
                     <div class="position-relative">
-                        <img class="rounded-circle"
+                        <img class="bi-circle"
                             src="img/images.ico.png"
                             alt="" style="width: 40px; height: 40px;">
                         <div
@@ -58,23 +57,17 @@
                     </div>
                 </div>
             </nav>
-        </div>
-        <!-- Sidebar End -->
+        </div> 
+        
 
 
-        <!-- Content Start -->
+        
         <div class="content">
             <!-- Navbar Start -->
             <nav class="navbar navbar-expand bg-secondary navbar-dark sticky-top px-4 py-0">
                 <a href="index.html" class="navbar-brand d-flex d-lg-none me-4">
                     <h2 class="text-primary mb-0"><i class="fa fa-user-edit"></i></h2>
                 </a>
-                <a href="#" class="sidebar-toggler flex-shrink-0">
-                    <i class="fa fa-bars"></i>
-                </a>
-                <form class="d-none d-md-flex ms-4">
-                    <input class="form-control bg-dark border-0" type="search" placeholder="Search">
-                </form>
                 <div class="navbar-nav align-items-center ms-auto">
                   
                    
@@ -153,6 +146,8 @@
                                             <th scope="col">Product</th>
                                             <th scope="col">Price</th>
                                             <th scope="col">Type</th>
+                                            <th scope="col">Action</th>
+
                                         </tr>
                                     </thead>
                                     <tbody class="""quotes">
@@ -164,6 +159,7 @@
                                                     <td><%= quotes[i].Product %></td>
                                                     <td><%= quotes[i].Price %></td>
                                                     <td><%= quotes[i].Types %></td>
+                                                    <td><a href="delete/<%= quotes[i]._id  %>" class="btn btn-sm btn-primary">Delete</a></td>
         
                                         
                                          </tr>
@@ -207,7 +203,7 @@
 
 
         <!-- Back to Top -->
-        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+        
     </div>
 
     <!-- JavaScript Libraries -->
